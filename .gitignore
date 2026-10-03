@@ -1,0 +1,25 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.egg-info/
+
+# Zbiory danych
+Greek/
+Serbian/
+*.mp3
+*.wav
+*.flac
+*.ogg
+*.tar
+*.tar.gz
+*.zip
+
+# Konfiguracja asystenta
+GEMINI.md
+
+# Cache i dane binarne
+*.parquet
+*.pkl
+
