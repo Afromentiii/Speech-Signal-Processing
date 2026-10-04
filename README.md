@@ -166,36 +166,3 @@ Ewaluację obu podejść przeprowadzono na **w 100% identycznej próbie danych**
 1. **Wpływ cech spektralno-prozodycznych na identycznej próbie:** Przy w 100% identycznej wielkości próby model MFCC + Prozodia + SVM RBF osiąga **77.26% dokładności testowej** oraz **0.850 ROC-AUC**, przewyższając model oparty na samej obwiedni i widmie modulacji (66.35% Acc, 0.743 ROC-AUC) o **+10.91 p.p.**
 2. **Odporność na przeuczenie:** W obu podejściach luka generalizacji utrzymuje się poniżej 9 punktów procentowych, a współczynnik zmienności $CV$ w 5-krotnej walidacji grupowej i w badaniu 5 ziaren losowości nie przekracza $1.7\%$, co świadczy o wysokiej stabilności modeli na niezależnych mówcach.
 3. **Ważność cech:** W modelu XGBoost cechami o największej stabilności między foldami były percentyle amplitudy (`p_25`, `p_10`), tempo występowania szczytów sylabicznych (`peak_rate_hz`, $CV=0.05$) oraz pasmo modulacji akcentowej (`rhythm_2hz`).
-
----
-
-## 7. Instrukcja instalacji i uruchomienia
-
-### Krok 1: Klonowanie repozytorium i przygotowanie środowiska
-```bash
-git clone https://github.com/Afromentiii/Speech-Signal-Processing.git
-cd Speech-Signal-Processing
-
-python -m venv .venv
-# Aktywacja na Windows PowerShell:
-.venv\Scripts\Activate.ps1
-```
-
-### Krok 2: Instalacja zależności
-```bash
-pip install -r requirements.txt
-```
-
-### Krok 3: Umieszczenie danych audio
-Pobierz pliki z Mozilla Common Voice i umieść nagrania `.mp3` w folderach `Greek/` oraz `Serbian/` w głównym katalogu projektu.
-
-### Krok 4: Uruchomienie notatników
-Otwórz notatniki w środowisku Jupyter lub VS Code i uruchamiaj komórki sekwencyjnie:
-- `SpeechML.ipynb` – eksperyment z cechami obwiedni i modelem XGBoost GPU.
-- `SpeechSpectrogramSVM.ipynb` – eksperyment z cechami MFCC, prozodią i modelem SVM RBF.
-
----
-
-## 8. Dokumentacja cech
-
-Szczegółowy opis matematyczny, wzory, jednostki fizyczne, zakresy wartości oraz uzasadnienie fonetyczne każdej cechy znajdują się w pliku [FEATURES.md](FEATURES.md).
